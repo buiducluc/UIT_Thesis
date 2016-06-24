@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/commons-cli-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/java-json.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/jsoup-1.8.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/junit.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/JVnTagger.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/lucene-analyzers-common-5.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/lucene-core-5.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/lucene-demo-5.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/lucene-facet-5.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/lucene-queryparser-5.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/maxent-2.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/opennlp-tools-1.4.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/trove.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/vn.hus.nlp.fsm-1.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/vn.hus.nlp.sd-2.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/vn.hus.nlp.tokenizer-4.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Downloads/UIT_Thesis-master/UIT_Thesis-master/FootBallQA/lib/vn.hus.nlp.utils-1.0.0.jar"/>
+	<classpathentry kind="lib" path="F:/apache-tomcat-8.0.32/apache-tomcat-8.0.32/lib/servlet-api.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
