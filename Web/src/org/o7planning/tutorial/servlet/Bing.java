@@ -1,6 +1,5 @@
 package org.o7planning.tutorial.servlet;
 
-
 import java.io.BufferedReader;
 
 import java.io.IOException;
@@ -25,7 +24,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-
 import jvntagger.MaxentTagger;
 import vn.hus.nlp.tokenizer.VietTokenizer;
 
@@ -44,7 +42,7 @@ public class Bing {
 	Lucene demo = new Lucene();
 	String regex_final = "";
 	List<String> result_Final = new ArrayList<String>();
-	
+
 	int limitLink = 10;
 
 	List<String> result = new ArrayList<String>();
@@ -63,25 +61,25 @@ public class Bing {
 	public void SplitData(ArrayList<String> data) {
 		String temp = "";
 		for (int i = 0; i < Data.size(); i++) {
-//			String[] temp = Data.get(i).split(".");
-//			for (int j = 0; j < temp.length; j++) {
-////				System.out.println("String: " + i + ": " + temp[i] );
-//				dataSplit.add(temp[i]);
-//			}
-			temp=temp+Data.get(i);
-			
+			// String[] temp = Data.get(i).split(".");
+			// for (int j = 0; j < temp.length; j++) {
+			//// System.out.println("String: " + i + ": " + temp[i] );
+			// dataSplit.add(temp[i]);
+			// }
+			temp = temp + Data.get(i);
+
 		}
-		String [] finalData = temp.split("\\.");
+		String[] finalData = temp.split("\\.");
 		for (int k = 0; k < finalData.length; k++) {
-			//dataFinal.add(dataSplit.get(k) + ". " + dataSplit.get(k + 1) + ". " + dataSplit.get(k + 2));
+			// dataFinal.add(dataSplit.get(k) + ". " + dataSplit.get(k + 1) + ".
+			// " + dataSplit.get(k + 2));
 			System.out.println("Data: " + finalData[k]);
 		}
-		List<String> finalData1 =  Arrays.asList(finalData);
-		for(int i=0;i<finalData1.size()-2;i++)
-		{
-			dataFinal.add(finalData1.get(i)+finalData1.get(i+1)+finalData1.get(i+2));
+		List<String> finalData1 = Arrays.asList(finalData);
+		for (int i = 0; i < finalData1.size() - 2; i++) {
+			dataFinal.add(finalData1.get(i) + finalData1.get(i + 1) + finalData1.get(i + 2));
 		}
-		
+
 	}
 
 	public void PatternMatch(String sentence, String question) {
@@ -104,13 +102,14 @@ public class Bing {
 				+ "|(\\d+\\/\\d+\\/\\d+)|(\\d+\\/\\d+)|(\\d+ tháng \\d+, \\d+)";
 		String regex_time_end = "((\\s)?(ngày \\d+ tháng \\d+ năm \\d+)|(\\d+ tháng \\d+ năm \\d+)|(\\d+\\-\\d+\\-\\d+)|(\\d+\\-\\d+)"
 				+ "|(\\d+\\/\\d+\\/\\d+)|(\\d+\\/\\d+)|(\\d+ tháng \\d+, \\d+))";
-		String regex_vitri="(Vị trí|vị trí)(\\s)([\\p{Lu}][\\p{Ll}]+\\s[\\p{Ll}]+)";
-		String regex_SVD="(Sân vận động|sân vận động|SVD)(\\s)([\\p{Lu}][\\p{Ll}]+){1,}";
-		String regex_sobanthang="(?<=Tổng cộng sự nghiệp|Tổng số)(\\s\\d+)+";
-		String regex_team="(câu lạc bộ|Câu lạc bộ|CLB)(\\s)?([\\p{Lu}][\\p{Ll}]+){1,}";
-		String regex_tiso="(tỉ số|Tỉ số)(\\:\\s|\\s)?(\\d+\\-\\d+)";
-		//String regex_bietdanh="(biệt danh|Biệt danh)(\\slà)?(\\s)?(\\"|\\'|\\‘|\“)(\\D+|\\w+)(\\"|\\'|\\’|\\”)";
-				
+		String regex_vitri = "(Vị trí|vị trí)(\\s)([\\p{Lu}][\\p{Ll}]+\\s[\\p{Ll}]+)";
+		String regex_SVD = "(Sân vận động|sân vận động|SVD)(\\s)([\\p{Lu}][\\p{Ll}]+){1,}";
+		String regex_sobanthang = "(?<=Tổng cộng sự nghiệp|Tổng số)(\\s\\d+)+";
+		String regex_team = "(câu lạc bộ|Câu lạc bộ|CLB)(\\s)?([\\p{Lu}][\\p{Ll}]+){1,}";
+		String regex_tiso = "(tỉ số|Tỉ số)(\\:\\s|\\s)?(\\d+\\-\\d+)";
+		// String regex_bietdanh="(biệt danh|Biệt
+		// danh)(\\slà)?(\\s)?(\\"|\\'|\\‘|\“)(\\D+|\\w+)(\\"|\\'|\\’|\\”)";
+
 		switch (demo.ClassifyQuestion(question)) {
 		case 1:
 			regex_final = regex_people;
@@ -165,7 +164,7 @@ public class Bing {
 			regex_final = regex_where_born;
 			break;
 		case 18:
-			regex_final= regex_sobanthang;
+			regex_final = regex_sobanthang;
 		default:
 			break;
 
@@ -229,13 +228,13 @@ public class Bing {
 			Data.add(link1.text());
 
 		}
-//		Elements link2 = doc.select("p");
-//		for (Element link1 : link2) {
-//			// System.out.println("\ntext: " + link1.text());
-//			System.out.println(link1.text());
-//			Data.add(link1.text());
-//
-//		}
+		// Elements link2 = doc.select("p");
+		// for (Element link1 : link2) {
+		// // System.out.println("\ntext: " + link1.text());
+		// System.out.println(link1.text());
+		// Data.add(link1.text());
+		//
+		// }
 
 	}
 
@@ -243,7 +242,8 @@ public class Bing {
 		if (demo.ClassifyQuestion(question) == 17 || demo.ClassifyQuestion(question) == 8
 				|| demo.ClassifyQuestion(question) == 9 || demo.ClassifyQuestion(question) == 10
 				|| demo.ClassifyQuestion(question) == 11 || demo.ClassifyQuestion(question) == 12
-				|| demo.ClassifyQuestion(question) == 13||demo.ClassifyQuestion(question) == 16|| demo.ClassifyQuestion(question) == 18) {
+				|| demo.ClassifyQuestion(question) == 13 || demo.ClassifyQuestion(question) == 16
+				|| demo.ClassifyQuestion(question) == 18) {
 
 			SearchWiki(question);
 		} else {
@@ -312,20 +312,21 @@ public class Bing {
 	 */
 
 	public void GetAnswerPeople(List<String> list) {
-		result_Final= new ArrayList<String>();
+		result_Final = new ArrayList<String>();
 		for (int i = 0; i < list.size(); i++) {
 			String segmented = tokenizer.segment(list.get(i));
 			// System.err.println(segmented);
 			String tagged = tagger.tagging(segmented);
 			// System.err.println(tagged);
-			String regex_ = "\\S+/(N|Np)"; // Tag giữ lại
+			String regex_ = "\\S+/(Np)"; // Tag giữ lại
 			Pattern pattern = Pattern.compile(regex_);
 			Matcher matcher = pattern.matcher(tagged);
 			while (matcher.find()) {
-			 String temp = matcher.group();
-			 result_Final.add(temp);
+				String temp = matcher.group();
+
 				temp = temp.replace("/N", "").replace("_", " ");
 				temp = temp.replace("/Np", "").replace("_", " ");
+				result_Final.add(temp);
 				System.out.println(temp + "\n");
 			}
 		}
@@ -442,20 +443,18 @@ public class Bing {
 	// }
 	//
 	// }
-	
-	public void GetSumGoal(List<String> string){
-		 result_Final= new ArrayList<String>();
-		for(int i = 0;i<string.size();i++){
-			String[]tempString = string.get(i).split(" ");
-			result_Final.add(tempString[tempString.length-1]);
-		}
-		for(int i = 0;i<result_Final.size();i++){
-		System.out.println(result_Final.get(i));
-		}
-		
-		
-	}
 
+	public void GetSumGoal(List<String> string) {
+		result_Final = new ArrayList<String>();
+		for (int i = 0; i < string.size(); i++) {
+			String[] tempString = string.get(i).split(" ");
+			result_Final.add(tempString[tempString.length - 1]);
+		}
+		for (int i = 0; i < result_Final.size(); i++) {
+			System.out.println(result_Final.get(i));
+		}
+
+	}
 
 	public static void main(String[] arg) throws Exception {
 		Scanner in = new Scanner(System.in);
@@ -467,34 +466,32 @@ public class Bing {
 		// String question = "Ai là vua phá lưới wc 2014?";
 		System.out.println(question);
 		bing.SearchDocument(question);
-		//bing.SplitData(bing.Data);
+		// bing.SplitData(bing.Data);
 		bing.demo.SearchSentences(question, bing.Data);
-//		for (int i = 0; i < bing.dataFinal.size(); i++) {
-//			System.err.println("Result: " + bing.dataFinal.get(i));
-//		}
-		 System.out.println("\n------Lucene-----\n");
-		 for (int i = 0; i < bing.demo.result_Final.size(); i++) {
-		
-		 System.out.println(i + "\t" + bing.demo.result_Final.get(i));
-		 bing.PatternMatch(bing.demo.result_Final.get(i), question);
-		
-		 }
-		 if (bing.demo.ClassifyQuestion(question) == 1 ||
-		 bing.demo.ClassifyQuestion(question) == 2) {
-		 System.err.println("Action People");
-		 bing.GetAnswerPeople(bing.result);
-		 }
-		 else if(bing.demo.ClassifyQuestion(question) == 18){
-			 bing.GetSumGoal(bing.result);
-			 for (int i = 0; i < 30; i++) {
-				 System.err.println("Result: " + bing.result.get(i));
-				 }
-		 }
-		 else {
-		 for (int i = 0; i < 30; i++) {
-		 System.err.println("Result: " + bing.result.get(i));
-		 }
-		 }
+		// for (int i = 0; i < bing.dataFinal.size(); i++) {
+		// System.err.println("Result: " + bing.dataFinal.get(i));
+		// }
+		System.out.println("\n------Lucene-----\n");
+		for (int i = 0; i < bing.demo.result_Final.size(); i++) {
+
+			System.out.println(i + "\t" + bing.demo.result_Final.get(i));
+			bing.PatternMatch(bing.demo.result_Final.get(i), question);
+
+		}
+		if (bing.demo.ClassifyQuestion(question) == 1 || bing.demo.ClassifyQuestion(question) == 2) {
+			System.err.println("Action People");
+			bing.GetAnswerPeople(bing.result);
+		} else if (bing.demo.ClassifyQuestion(question) == 18) {
+			bing.GetSumGoal(bing.result);
+			for (int i = 0; i < 30; i++) {
+				System.err.println("Result: " + bing.result.get(i));
+			}
+		} else {
+			for (int i = 0; i < 30; i++) {
+				System.err.println("Result: " + bing.result.get(i));
+			}
+		}
+
 	}
 
 }

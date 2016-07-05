@@ -71,7 +71,7 @@ public class Lucene {
 		// when no field is explicitly specified in the query.
 		Query q = new QueryParser("contents", analyzer).parse(QueryParseTitle(querystr, "title") + " OR " + querystr);
 
-		// System.out.println("Query: " + q);
+		System.out.println("Query: " + q);
 
 		// 3. search
 		int hitsPerPage = 30;
@@ -152,10 +152,7 @@ public class Lucene {
 	}
 
 	public String PatternRepalace(String text) {
-		// Xử lý một vài danh từ riêng đứng đầu câu bị gán nhãn là /N mà không
-		// phải là /Np
 		String segmented = tokenizer.segment("hehe " + text);
-		// Tách lấy danh từ riêng
 		String tagged = tagger.tagging(segmented);
 		String noun_list = "";
 		String regex_replace = "\\S+/Np|/M";
