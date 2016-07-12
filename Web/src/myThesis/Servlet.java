@@ -21,9 +21,9 @@ public class Servlet extends HttpServlet {
 
 		request.setCharacterEncoding("utf-8");
 		Bing bing = new Bing();
-		List<String>dataLucene = new ArrayList<String>();
-		List<String>answer = new ArrayList<String>();
-		SearchDocument searchDoc = new SearchDocument();
+		List<String> dataLucene = new ArrayList<String>();
+		List<String> answer = new ArrayList<String>();
+		SearchDocument searDoc = new SearchDocument();
 		String ques = request.getParameter("userName").trim();
 		if(ques.matches("(.*)(World Cup sắp tới|World Cup lần tới|World Cup tiếp theo|World Cup tiếp theo)(.*)"))
 		{
@@ -49,8 +49,8 @@ public class Servlet extends HttpServlet {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-		// String userName = request.getParameter("userName").trim();
-		System.out.println("number: " + IdentifyQuestion.ClassifyQuestion(ques));
+//		// String userName = request.getParameter("userName").trim();
+//		System.out.println("number: " + bing.demo.ClassifyQuestion(ques));
 //		try {
 //			bing.SearchDocument(ques);
 //		} catch (ParseException e) {
@@ -59,32 +59,31 @@ public class Servlet extends HttpServlet {
 //		}
 
 		try {
-			dataLucene = searchDoc.SearchDocument2(ques);
+//			bing.demo.SearchSentences(ques, bing.Data);
+			dataLucene = Lucene.SearchSentences(ques, searDoc.SearchDocument2(ques));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		 System.out.println("\n------Lucene-----\n");
-		 for (int i = 0; i < dataLucene.size(); i++) {
-		
-		 System.out.println(dataLucene.get(i));
-		 answer.addAll(ReturnAnswer.PatternMatch(dataLucene.get(i), ques));
-		 //bing.PatternMatch(bing.demo.result_Final.get(i), question);
-		
-		 }
+		for (int i = 0; i < dataLucene.size(); i++) {
+			System.out.println(i + "\t" + dataLucene.get(i));
+			answer.addAll(ReturnAnswer.PatternMatch(dataLucene.get(i), ques));
+		}
 		
 		String result = "Đáp án: \n";
 		//Cau hoi ve tong so ban thang
-		if (IdentifyQuestion.ClassifyQuestion(ques) == 18) {
-			bing.GetSumGoal(answer);
-			for (int i = 0; i < bing.result_Final.size(); i++)
+		if(IdentifyQuestion.ClassifyQuestion(ques) == 18) {
+			List<String> list = new ArrayList<String>();
+			list = bing.GetSumGoal(answer);
+			for (int i = 0; i <list.size(); i++)
 				
 				result = result + bing.result_Final.get(i) + "\n";
 		}	
 		
 		else if (IdentifyQuestion.ClassifyQuestion(ques) == QuestionResult.SUM_MATCH) {
-			bing.GetSumMatch(answer);
-			for (int i = 0; i < bing.result_Final.size(); i++)
+			List<String> list = new ArrayList<String>();
+			list = bing.GetSumMatch(answer);
+			for (int i = 0; i < list.size(); i++)
 				
 				result = result + bing.result_Final.get(i) + "\n";
 		}

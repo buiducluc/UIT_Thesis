@@ -5,23 +5,23 @@
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="Web/WebContent/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/commons-cli-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/java-json.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/jsoup-1.8.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/junit.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/JVnTagger.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/lucene-analyzers-common-5.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/lucene-core-5.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/lucene-demo-5.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/lucene-facet-5.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/lucene-queryparser-5.3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/maxent-2.5.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/opennlp-tools-1.4.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/trove.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/vn.hus.nlp.fsm-1.0.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/vn.hus.nlp.sd-2.0.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/vn.hus.nlp.tokenizer-4.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/Web/WebContent/WEB-INF/lib/vn.hus.nlp.utils-1.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/commons-cli-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/java-json.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/jsoup-1.8.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/junit.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/JVnTagger.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/lucene-analyzers-common-5.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/lucene-core-5.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/lucene-demo-5.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/lucene-facet-5.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/lucene-queryparser-5.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/maxent-2.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/opennlp-tools-1.4.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/trove.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/vn.hus.nlp.fsm-1.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/vn.hus.nlp.sd-2.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/vn.hus.nlp.tokenizer-4.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Germany_Luc/Desktop/UIT_Thesis/Web/WebContent/WEB-INF/lib/vn.hus.nlp.utils-1.0.0.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="F:/apache-tomcat-8.0.32/apache-tomcat-8.0.32/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>

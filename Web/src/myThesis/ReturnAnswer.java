@@ -17,28 +17,24 @@ public class ReturnAnswer {
 
 		// String regex_when_die = "\\d+\\)|((-|–)\\s*\\D+\\d+\\))|mất ngày \\d+
 		// tháng \\d+ năm \\d+|(mất năm) \\d+";
-		String regex_whereSVD="(thành phố|nước|quốc gia)((\\s[\\p{Lu}][\\p{Ll}]+)\\,?)+";
-		String regex_where = "(tại|ở)?((\\s[\\p{Lu}][\\p{Ll}]+)|(\\s(thành phố|nước|quốc gia))(\\s([\\p{Lu}][\\p{Ll}]+)(\\-)([\\p{Lu}][\\p{Ll}]+)|(\\s[\\p{Lu}][\\p{Ll}]+){1,}))";
+		String regex_where = "(tại|ở)?(\\s(sân| sân vận động|thành phố|nước|quốc gia))(\\s[\\p{Lu}][\\p{Ll}+]+){1,}";
 		// String regex1 = "(?<=tổ chức)(\\s(tại|ở)?(\\s[\\p{Lu}][\\p{Ll}]+))+";
 		String regex_tall = "(Chiều cao|chiều cao)(\\s\\d+(\\,|\\.)\\d+)|(Chiều cao: |chiều cao: )(\\s\\d+m\\d+)";
 		String regex_height = "(Cân nặng|cân nặng)(\\s\\d+)";
 		String regex_number = "(số áo|số|Số áo)(\\s\\d+)";
-		String regex_people = "(([\\p{Lu}][\\p{Ll}]+\\s)+(trở thành|là|giành|giành được|đạt|xuất sắc nhận|đã giành|vừa giành|bên|đã chính thức|chính thức trở thành|chính thức đoạt|làm|sẽ là)"
-				+ "(\\s(danh hiệu|giải thưởng|giải))?"
-				+ "(\\s([Vv]ua phá lưới|[Tt]hủ môn|[Cc]hiếc giày [Vv]àng|[Gg]ăng tay [Vv]àng|QBV|[Cc]ầu thủ|HLV|[Hh]uấn luyện viên|[Qq]uả bóng vàng))"
-				+"|((HLV|tiền đạo|tiền vệ|hậu vệ|thủ môn)(\\s[\\p{Lu}][\\p{Ll}]+)+))";
+		String regex_people = "(\\s?[\\p{Lu}][\\p{Ll}]+){1,}(.*)(?=(thủ môn xuất sắc nhất 2014|Vua bóng đá|biệt danh|Quả bóng vàng|Quả bóng Vàng|vua phá lưới|Vua phá lưới|Huấn luyện viên"
+				+ "|huấn luyện viên|chủ tịch|Chủ tịch|Chủ Tịch))";
 		String regex_time_start = "(?<=bắt đầu|Bắt đầu)(\\s)?(ngày \\d+ tháng \\d+ năm \\d+)|(\\d+ tháng \\d+ năm \\d+)|(\\d+\\-\\d+\\-\\d+)|(\\d+\\-\\d+)"
 				+ "|(\\d+\\/\\d+\\/\\d+)|(\\d+\\/\\d+)|(\\d+ tháng \\d+, \\d+)";
 		String regex_time_end = "((\\s)?(ngày \\d+ tháng \\d+ năm \\d+)|(\\d+ tháng \\d+ năm \\d+)|(\\d+\\-\\d+\\-\\d+)|(\\d+\\-\\d+)"
 				+ "|(\\d+\\/\\d+\\/\\d+)|(\\d+\\/\\d+)|(\\d+ tháng \\d+, \\d+))";
 		String regex_vitri="(Vị trí|vị trí)(\\s)([\\p{Lu}][\\p{Ll}]+\\s[\\p{Ll}]+)";
-		String regex_SVD="(Sân vận động|sân vận động|SVĐ)((\\s)([\\p{Lu}][\\p{Ll}]+)){1,}";
-		String regex_sobanthang="(Tổng cộng sự nghiệp)(\\s\\d+)+";
-		String regex_team="((câu lạc bộ|Câu lạc bộ|CLB|khoác áo|tuyển|ĐT)(\\s?[\\p{Lu}][\\p{Ll}]+){1,})|(([\\p{Lu}][\\p{Ll}]+){1,}(\\s(đã|sắp))?(\\s(vô địch|chính thức|lên ngôi|giành danh hiệu))(\\s)(([\\p{Lu}][\\p{Ll}]+\\s){1,})?)";
-		String regex_tiso="([Tt][ỉỷ]\\ssố)(\\:\\s|\\s)?(\\d+\\-\\d+)";
+		String regex_SVD="(Sân vận động|sân vận động|SVD)(\\s)([\\p{Lu}][\\p{Ll}]+){1,}";
+		String regex_sobanthang="(?<=Tổng cộng sự nghiệp|Tổng số)(\\s\\d+)+";
+		String regex_team="(câu lạc bộ|Câu lạc bộ|CLB)(\\s)?([\\p{Lu}][\\p{Ll}]+){1,}";
+		String regex_tiso="(tỉ số|Tỉ số)(\\:\\s|\\s)?(\\d+\\-\\d+)";
 		//String regex_bietdanh="(biệt danh|Biệt danh)(\\slà)?(\\s)?(\\"|\\'|\\‘|\“)(\\D+|\\w+)(\\"|\\'|\\’|\\”)";
 		String regex_sodo="(?<= sơ đồ|Sơ đồ chiến thuật)(\\s)?(\\d+\\-?)+";
-		String regex_match="(\\s)(([\\p{Lu}][\\p{Ll}]+\\s){1,})(và)(\\s)(([\\p{Lu}][\\p{Ll}]+(\\s|\\.|\\,)?){1,})";
 				
 		switch (IdentifyQuestion.ClassifyQuestion(question)) {
 		case QuestionResult.PEOPLE:
@@ -95,31 +91,21 @@ public class ReturnAnswer {
 			break;
 		case QuestionResult.SUM_GOAL:
 			regex_final= regex_sobanthang;
-			break;
 		case QuestionResult.SUM_MATCH:
-			regex_final= regex_sobanthang;
-			break;
+			regex_final= "";
 		case QuestionResult.SQUAD:
 			regex_final= regex_sodo;
-			break;
-		case QuestionResult.WHERE_SVD:
-			regex_final=regex_whereSVD;
-			break;
-		case QuestionResult.MATCH:
-			regex_final=regex_match;
-			break;
 		default:
 			break;
 
 		}
-		
-	
+
 		Pattern pattern = Pattern.compile(regex_final);
 		Matcher matcher = pattern.matcher(sentence);
 		while (matcher.find()) {
 			tempResult = matcher.group();
-//			// -----System.out.println(tempResult);
-//			tempResult = tempResult.replaceAll("[^\\u00BF-\\u1FFF\\u2C00-\\uD7FF\\w\\s]", "").replaceAll("\\s+$", "");
+			// -----System.out.println(tempResult);
+			//tempResult = tempResult.replaceAll("[^\\u00BF-\\u1FFF\\u2C00-\\uD7FF\\w\\s]", "").replaceAll("\\s+$", "");
 			answer.add(tempResult);
 		}
 		return answer;
