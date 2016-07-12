@@ -1,4 +1,6 @@
-
+body{
+	background-image: url("6.jpg");
+}
 
 .cf:before, .cf:after{
     content:"";
@@ -17,7 +19,7 @@
 .form-wrapper {
     width: 650px;
     padding: 15px;
-    margin: 150px auto 50px auto;
+    margin: 220px auto 50px auto;
     background: #444;
     background: rgba(0,0,0,.2);
     border-radius: 10px;

@@ -12,7 +12,7 @@
 <script src="js/app-ajax.js" type="text/javascript"></script>
 <link rel="stylesheet" href="form.css"/>
 </head>
-<body bgcolor="#A28D89">
+<body >
 
     <form class="form-wrapper cf">
          	<input type="text" id="userName" placeholder="Search here..." required>
